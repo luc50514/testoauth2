@@ -8,7 +8,16 @@ const clientid = "419936028232-r3qh3k1l57qcpcfrlktibbibsqvfka67.apps.googleuserc
 
 function App() {
 
-  
+  useEffect(() => {
+    function start(){
+      gapi.client.init({ 
+        clientId: clientid, 
+        scope:""
+      })
+    };
+
+    gapi.load('client:auth2', start);
+  });
   return (
     <div className="App">
      <LoginButton/>
